@@ -344,19 +344,10 @@ class ResponseHandler(object):
     def getDebugInfo(self):
         return self.debugInfo
     
-    def doShow(self,show_url):
-        strHtml = """
-        <html><head><meta name="TENCENT_ONLINE_PAYMENT" content="China TENCENT">
-        <script language="javascript">
-        window.location.href="%s"
-        </script>
-        </head><body></body></html>
-        """ % show_url
-        
-        return HttpResponse(strHtml)
 
     def _setDebugInfo(self,debugInfo):
         self.debugInfo = debugInfo
+
 
 def gen_order(goods_name,total_fee,bank_type,send_sms,request):
     randNum = randint(1000,9999)
